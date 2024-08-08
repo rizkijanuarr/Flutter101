@@ -22,4 +22,10 @@ class EAnimationController extends State<EAnimationView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  bool isAnimated = false;
+  updateAnimationState() {
+    isAnimated = !isAnimated;
+    setState(() {});
+  }
 }
