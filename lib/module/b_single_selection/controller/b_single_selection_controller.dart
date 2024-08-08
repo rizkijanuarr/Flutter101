@@ -22,4 +22,24 @@ class BSingleSelectionController extends State<BSingleSelectionView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  // Pertama kita buat datanya dulu yaa!
+  List categories = [
+    "Aan",
+    "Citra",
+    "Lestari",
+    "Aziz",
+    "Agung",
+    "Nabila",
+    "Tasim",
+    "Kaleann semua keren!",
+    "Good game bro dimanapun berada!"
+  ];
+
+  // Kedua kita buat warnanya ketika di select ya!
+  int selectedIndex = -1;
+  updateIndex(int newIndex) {
+    selectedIndex = newIndex;
+    setState(() {});
+  }
 }

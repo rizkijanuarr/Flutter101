@@ -9,7 +9,7 @@ class ACounterView extends StatefulWidget {
     controller.view = this;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ACounter"),
+        title: const Text("Counter"),
         actions: const [],
       ),
       body: SingleChildScrollView(
