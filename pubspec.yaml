@@ -12,7 +12,6 @@ dependencies:
   google_fonts: ^6.1.0
   dio: ^5.4.0
   material_design_icons_flutter: ^7.0.7296
-  get: ^4.6.6
   carousel_slider: ^4.2.1
   flutter_animate: ^4.5.0
   window_manager: ^0.3.7

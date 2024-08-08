@@ -1,58 +1,71 @@
 import 'package:flutter/material.dart';
-import '../controller/a_counter_controller.dart';
 import 'package:flutter101/core.dart';
+import '../controller/a_counter_controller.dart';
 
 class ACounterView extends StatefulWidget {
   const ACounterView({super.key});
 
-  @override
-  _ACounterViewState createState() => _ACounterViewState();
-}
-
-class _ACounterViewState extends State<ACounterView> {
-  final ACounterController _controller = ACounterController();
-
-  // PENERAPANNYA!
-  void _updateUI() {
-    setState(() {});
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(context, ACounterController controller) {
+    controller.view = this;
     return Scaffold(
-      appBar: AppBar(title: const Text('Counter')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // PENERAPANNYA!
-            Text(
-              "Counter : ${_controller.counter}",
-              style: const TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const Divider(),
-            const SizedBox(
-              height: 10.0,
-            ),
-            // PENERAPANNYA!
-            ElevatedButton(
-              onPressed: () {
-                _controller.updateCounter(_updateUI);
-              },
-              child: const Text(
-                "Add counter",
-                style: TextStyle(
-                  fontSize: 18.0,
+      appBar: AppBar(
+        title: const Text("ACounter"),
+        actions: const [],
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                // IMPLEMENTATION FROM CONTROLLER!
+                "${controller.tambah}",
+                style: const TextStyle(
+                  fontSize: 30.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-          ],
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
+                ),
+                // IMPLEMENTATION FROM CONTROLLER!
+                onPressed: () => controller.tambahCounter(),
+                child: const Text("+"),
+              ),
+              const SizedBox(
+                height: 5.0,
+              ),
+              const Divider(),
+              const SizedBox(
+                height: 5.0,
+              ),
+              Text(
+                // IMPLEMENTATION FROM CONTROLLER!
+                "${controller.kurang}",
+                style: const TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
+                ),
+                // IMPLEMENTATION FROM CONTROLLER!
+                onPressed: () => controller.kurangCounter(),
+                child: const Text("-"),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+
+  @override
+  State<ACounterView> createState() => ACounterController();
 }

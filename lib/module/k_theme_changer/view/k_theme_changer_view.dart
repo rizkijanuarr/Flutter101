@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
-import '../controller/k_theme_changer_controller.dart';
 import 'package:flutter101/core.dart';
-import 'package:get/get.dart';
+import '../controller/k_theme_changer_controller.dart';
 
-class KThemeChangerView extends StatelessWidget {
+class KThemeChangerView extends StatefulWidget {
   const KThemeChangerView({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<KThemeChangerController>(
-      init: KThemeChangerController(),
-      builder: (controller) {
-        controller.view = this;
-
-        return Scaffold(
-          appBar: AppBar(
-            title: const Text("KThemeChanger"),
+  Widget build(context, KThemeChangerController controller) {
+    controller.view = this;
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("KThemeChanger"),
+        actions: const [],
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: const [],
           ),
-          body: SingleChildScrollView(
-            child: Container(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: const [],
-              ),
-            ),
-          ),
-        );
-      },
+        ),
+      ),
     );
   }
+
+  @override
+  State<KThemeChangerView> createState() => KThemeChangerController();
 }

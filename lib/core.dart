@@ -11,7 +11,6 @@ export 'package:flutter101/module/c_multiple_selection/controller/c_multiple_sel
 export 'package:flutter101/module/c_multiple_selection/view/c_multiple_selection_view.dart';
 export 'package:flutter101/module/dashboard/controller/dashboard_controller.dart';
 export 'package:flutter101/module/dashboard/view/dashboard_view.dart';
-export 'package:flutter101/module/dashboard/widget/dashboard_menu.dart';
 export 'package:flutter101/module/d_cart/controller/d_cart_controller.dart';
 export 'package:flutter101/module/d_cart/view/d_cart_view.dart';
 export 'package:flutter101/module/e_animation/controller/e_animation_controller.dart';

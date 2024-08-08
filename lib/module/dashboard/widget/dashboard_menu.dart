@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter101/core.dart';
-import 'package:get/get.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class DashboardMenu extends StatelessWidget {
   const DashboardMenu({super.key});
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> menuItems = [
-      {"label": "A. Counter", "page": ACounterView(), "icon": "🚀"},
+      {"label": "A. Counter", "page": const ACounterView(), "icon": "🚀"},
       {
         "label": "B. Single Selection",
         "page": const BSingleSelectionView(),
@@ -64,7 +62,10 @@ class DashboardMenu extends StatelessWidget {
         var item = menuItems[index];
         return InkWell(
           onTap: () {
-            Get.to(item["page"]);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => item["page"]),
+            );
           },
           child: Container(
             decoration: BoxDecoration(

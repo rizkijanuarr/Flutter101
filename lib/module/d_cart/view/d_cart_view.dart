@@ -1,32 +1,28 @@
 import 'package:flutter/material.dart';
-import '../controller/d_cart_controller.dart';
 import 'package:flutter101/core.dart';
-import 'package:get/get.dart';
+import '../controller/d_cart_controller.dart';
 
-class DCartView extends StatelessWidget {
+class DCartView extends StatefulWidget {
   const DCartView({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<DCartController>(
-      init: DCartController(),
-      builder: (controller) {
-        controller.view = this;
-
-        return Scaffold(
-          appBar: AppBar(
-            title: const Text("DCart"),
+  Widget build(context, DCartController controller) {
+    controller.view = this;
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("DCart"),
+        actions: const [],
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: const [],
           ),
-          body: SingleChildScrollView(
-            child: Container(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: const [],
-              ),
-            ),
-          ),
-        );
-      },
+        ),
+      ),
     );
   }
+
+  @override
+  State<DCartView> createState() => DCartController();
 }

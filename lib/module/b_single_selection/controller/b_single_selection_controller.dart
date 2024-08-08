@@ -1,21 +1,25 @@
-import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter101/core.dart';
 import '../view/b_single_selection_view.dart';
 
-class BSingleSelectionController extends GetxController {
-  BSingleSelectionView? view;
+class BSingleSelectionController extends State<BSingleSelectionView> {
+  static late BSingleSelectionController instance;
+  late BSingleSelectionView view;
 
   @override
-  void onInit() {
-    super.onInit();
+  void initState() {
+    super.initState();
+    instance = this;
+    WidgetsBinding.instance.addPostFrameCallback((_) => onReady());
+  }
+
+  void onReady() {}
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
+  Widget build(BuildContext context) => widget.build(context, this);
 }
