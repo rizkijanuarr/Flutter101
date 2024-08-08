@@ -8,7 +8,7 @@ class DashboardMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> menuItems = [
-      {"label": "A. Counter", "page": const ACounterView(), "icon": "🚀"},
+      {"label": "A. Counter", "page": ACounterView(), "icon": "🚀"},
       {
         "label": "B. Single Selection",
         "page": const BSingleSelectionView(),

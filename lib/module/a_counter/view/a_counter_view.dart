@@ -1,32 +1,58 @@
 import 'package:flutter/material.dart';
 import '../controller/a_counter_controller.dart';
 import 'package:flutter101/core.dart';
-import 'package:get/get.dart';
 
-class ACounterView extends StatelessWidget {
+class ACounterView extends StatefulWidget {
   const ACounterView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return GetBuilder<ACounterController>(
-      init: ACounterController(),
-      builder: (controller) {
-        controller.view = this;
+  _ACounterViewState createState() => _ACounterViewState();
+}
 
-        return Scaffold(
-          appBar: AppBar(
-            title: const Text("ACounter"),
-          ),
-          body: SingleChildScrollView(
-            child: Container(
-              padding: const EdgeInsets.all(10.0),
-              child: const Column(
-                children: [],
+class _ACounterViewState extends State<ACounterView> {
+  final ACounterController _controller = ACounterController();
+
+  // PENERAPANNYA!
+  void _updateUI() {
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Counter')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // PENERAPANNYA!
+            Text(
+              "Counter : ${_controller.counter}",
+              style: const TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-        );
-      },
+            const Divider(),
+            const SizedBox(
+              height: 10.0,
+            ),
+            // PENERAPANNYA!
+            ElevatedButton(
+              onPressed: () {
+                _controller.updateCounter(_updateUI);
+              },
+              child: const Text(
+                "Add counter",
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

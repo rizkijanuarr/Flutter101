@@ -1,21 +1,13 @@
-import 'package:get/get.dart';
 import '../view/a_counter_view.dart';
 
-class ACounterController extends GetxController {
+class ACounterController {
+  static late ACounterController instance;
   ACounterView? view;
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
+  // LOGIC SIMPLE COUNTER!
+  int counter = 0;
+  void updateCounter(Function() updateUI) {
+    counter++;
+    updateUI();
   }
 }
