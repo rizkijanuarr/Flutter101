@@ -32,6 +32,8 @@ class BSingleSelectionController extends State<BSingleSelectionView> {
     "Agung",
     "Nabila",
     "Tasim",
+    "Adnan",
+    "Haryadi",
     "Kaleann semua keren!",
     "Good game bro dimanapun berada!"
   ];

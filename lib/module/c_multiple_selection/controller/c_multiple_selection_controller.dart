@@ -47,6 +47,12 @@ class CMultipleSelectionController extends State<CMultipleSelectionView> {
       "label": "Tasim",
     },
     {
+      "label": "Adnan",
+    },
+    {
+      "label": "Haryadi",
+    },
+    {
       "label": "Kaleann semua keren!",
     },
     {
