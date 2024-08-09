@@ -30,5 +30,6 @@ export 'package:flutter101/module/k_theme_changer/view/k_theme_changer_view.dart
 export 'package:flutter101/module/l_navigation/controller/l_navigation_controller.dart';
 export 'package:flutter101/module/l_navigation/view/l_navigation_view.dart';
 export 'package:flutter101/shared/widget/form/textfield/text_field.dart';
+export 'package:flutter101/shared/widget/form/dropdown/dropdown.dart';
 export 'package:flutter101/shared/util/validator/validator.dart';
 export 'package:flutter101/shared/util/dialog/show_info_dialog.dart';
