@@ -22,4 +22,53 @@ class LNavigationController extends State<LNavigationView> {
 
   @override
   Widget build(BuildContext context) => widget.build(context, this);
+
+  List navigateItems = [
+    {
+      "label": "Dashboard",
+      // halaman, sementara ditampilin container aja
+      "view": Container(
+        color: Colors.blueAccent,
+      ),
+    },
+    {
+      "label": "Pasien Baru",
+      "view": Container(
+        color: Colors.redAccent,
+      ),
+    },
+    {
+      "label": "Pasien Lama",
+      "view": Container(
+        color: Colors.greenAccent,
+      ),
+    },
+    {
+      "label": "BPJS",
+      "view": Container(
+        color: Colors.yellowAccent,
+      ),
+    },
+    {
+      "label": "Satu Sehat",
+      "view": Container(
+        color: Colors.orangeAccent,
+      ),
+    },
+    {
+      "label": "Settings",
+      "view": Container(
+        color: Colors.black,
+      ),
+    }
+  ];
+
+  // selected
+  int selectedIndex = 0;
+  Widget? currentView;
+  updateIndex(int newIndex) {
+    selectedIndex = newIndex;
+    currentView = navigateItems[newIndex]["view"];
+    setState(() {});
+  }
 }
