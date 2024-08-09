@@ -3,20 +3,32 @@ import 'package:flutter101/core.dart';
 import '../controller/f_timer_controller.dart';
 
 class FTimerView extends StatefulWidget {
-  const FTimerView({Key? key}) : super(key: key);
+  const FTimerView({super.key});
 
   Widget build(context, FTimerController controller) {
     controller.view = this;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("FTimer"),
+        title: const Text("Timer"),
         actions: const [],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: const [],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: [
+                //
+                Text(
+                  "${controller.time}",
+                  style: const TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                //
+              ],
+            ),
           ),
         ),
       ),
